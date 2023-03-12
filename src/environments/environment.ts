@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  OPENAI_API_KEY: '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',
+  GPT_API: 'https://api.openai.com/v1/completions'
 };
 
 /*
