@@ -6,7 +6,17 @@ import { FolderPage } from './folder.page';
 const routes: Routes = [
   {
     path: '',
-    component: FolderPage
+    component: FolderPage,
+    children: [
+      {
+        path: 'main_chat',
+        loadChildren: () => import('./main-chat/main-chat.module').then( m => m.MainChatPageModule)
+      },
+      {
+        path: 'map',
+        loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+      }
+    ]
   }
 ];
 
