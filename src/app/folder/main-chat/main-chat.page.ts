@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GptHttpServiceService } from './gpt-http-service.service';
-import { GptServiceService } from './gpt-service.service';
-import { GptResponse } from './gptResponse';
+import { GptHttpServiceService } from '../../services/gpt-http-service.service';
+import { GptResponse } from '../../models/gptResponse';
 
 @Component({
   selector: 'app-main-chat',

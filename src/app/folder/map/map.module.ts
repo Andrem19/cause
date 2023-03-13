@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { MapPageRoutingModule } from './map-routing.module';
 
 import { MapPage } from './map.page';
+import { MapDetailPageModule } from '../map-detail/map-detail.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MapPageRoutingModule
+    MapPageRoutingModule,
+    MapDetailPageModule
   ],
   declarations: [MapPage]
 })

@@ -8,6 +8,7 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
 import { MainChatPageModule } from './main-chat/main-chat.module';
+import { MapPageModule } from './map/map.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MainChatPageModule } from './main-chat/main-chat.module';
     FormsModule,
     IonicModule,
     FolderPageRoutingModule,
-    MainChatPageModule
+    MainChatPageModule,
+    MapPageModule
   ],
   declarations: [FolderPage]
 })

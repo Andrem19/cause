@@ -5,5 +5,19 @@
 </ion-header>
 
 <ion-content>
-<p>Map</p>
+  <ion-grid>
+    <ion-row class="ion-no-padding">
+      <ion-col *ngFor="let map of maps"
+      class="ion-no-padding ion-no-margin ion-justify-content-center"
+      size="6" size-md="2" sixe-lg="1">
+        <ion-card routerLink="detail/{{map._id}}" class="ion-no-padding myCard">
+          <img src="{{map.image}}">
+          <div class="myOverlay">
+            <div class="card-title"><a class="img_text">{{map.Name_of_location}}</a></div>
+            <div class="card-subtitle">{{map.Coordinates[0]}} {{map.Coordinates[1]}}</div>
+         </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

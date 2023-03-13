@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MapServiceService } from 'src/app/services/map-service.service';
 
 @Component({
   selector: 'app-map',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.page.scss'],
 })
 export class MapPage implements OnInit {
-
-  constructor() { }
+  maps: any;
+  constructor(private mapService: MapServiceService) { }
 
   ngOnInit() {
   }
-
+  ngAfterViewInit() {
+    this.mapService.getCurrentTables().subscribe((mapDocs) => {
+      console.warn(mapDocs)
+      this.maps = mapDocs;
+    });
+    this.mapService.fetchMaps();
+  }
 }
