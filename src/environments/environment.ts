@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  OPENAI_API_KEY: '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',
-  GPT_API: 'https://api.openai.com/v1/completions'
+  OPENAI_API_KEY: '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',
+  GPT_API: 'https://api.openai.com/v1/completions',
+  KeyPassword: 'fetziLx4uNwPdhB67i1iFyVi8c3FmjhzZ'
 };
 
 /*

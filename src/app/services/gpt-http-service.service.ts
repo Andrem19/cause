@@ -11,7 +11,7 @@ export class GptHttpServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getAnswer(msg: String): Observable<GptResponse> {
+  getAnswer(msg: any): Observable<GptResponse> {
     let data = this.createBodyRequest(msg)
     console.log(data)
     return this.http.post<GptResponse>(`${environment.GPT_API}`, data, {headers:
@@ -20,10 +20,10 @@ export class GptHttpServiceService {
   });
   }
 
-  createBodyRequest(msg: String): object {
+  createBodyRequest(msg: any): object {
     let data = {
       model:            "text-davinci-003",
-		  prompt:           msg,
+		  prompt:           JSON.stringify(msg),
 		  temperature:      0.7,
 		  max_tokens:        2000,
 		  top_p:             1,

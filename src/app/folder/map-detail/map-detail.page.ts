@@ -17,7 +17,6 @@ export class MapDetailPage implements OnInit {
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params => {
-      console.log(params['id']) //log the value of id
       this.id = params['id']
     });
     this.mapService.getCurrentMap(this.id).subscribe((mapDocs) => {
@@ -25,10 +24,6 @@ export class MapDetailPage implements OnInit {
       this.map = mapDocs;
     });
     this.mapService.fetchMap();
-  }
-
-  ngAfterViewInit() {
-
   }
 
   ngOnDestroy() {

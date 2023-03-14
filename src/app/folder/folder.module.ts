@@ -9,6 +9,7 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 import { FolderPage } from './folder.page';
 import { MainChatPageModule } from './main-chat/main-chat.module';
 import { MapPageModule } from './map/map.module';
+import { PlayerInfoPage } from './player-info/player-info.page';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { MapPageModule } from './map/map.module';
     MainChatPageModule,
     MapPageModule
   ],
-  declarations: [FolderPage]
+  declarations: [FolderPage, PlayerInfoPage]
 })
 export class FolderPageModule {}

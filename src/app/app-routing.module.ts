@@ -11,6 +11,14 @@ const routes: Routes = [
     path: 'folder',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule),
 
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
   }
 ];
 

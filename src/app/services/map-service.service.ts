@@ -7,7 +7,7 @@ import { DbService } from './db.service';
 })
 export class MapServiceService {
   id!: String;
-  tableSubject = new Subject();
+  mapsSubject = new Subject();
   oneMap = new Subject()
   subscriptions: Array<Subscription> = []
   constructor(private dbService: DbService) {
@@ -46,7 +46,7 @@ export class MapServiceService {
       map((obj: any) => obj['docs'])
     )
     q.pipe(take(1), catchError((_) => of([]))).subscribe((tableDocs) => {
-      this.tableSubject.next(tableDocs)
+      this.mapsSubject.next(tableDocs)
     })
   }
 
@@ -63,11 +63,12 @@ export class MapServiceService {
     )
     q.pipe(take(1), catchError((_) => of([]))).subscribe((mapDocs) => {
       this.oneMap.next(mapDocs)
+      console.log(mapDocs)
     })
   }
 
-  getCurrentTables() {
-    return this.tableSubject.asObservable();
+  getCurrentMaps() {
+    return this.mapsSubject.asObservable();
   }
   getCurrentMap(idi: String) {
     this.id = idi;

@@ -13,8 +13,7 @@ export class MapPage implements OnInit {
   ngOnInit() {
   }
   ngAfterViewInit() {
-    this.mapService.getCurrentTables().subscribe((mapDocs) => {
-      console.warn(mapDocs)
+    this.mapService.getCurrentMaps().subscribe((mapDocs) => {
       this.maps = mapDocs;
     });
     this.mapService.fetchMaps();

@@ -1,0 +1,35 @@
+<div *ngIf="user; else noLogin">
+<ion-grid [fixed]="true">
+  <ion-row *ngFor="let u of user">
+    <ion-col class="ion-anign-vertical">
+      <ion-avatar width="30px" height="30px"><img alt="Silhouette of a person's head" src="../../assets/avatars/{{u.image}}" /></ion-avatar>
+      <ion-label>{{u.username}}</ion-label>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-row>Level: {{u.Level}}</ion-row>
+      <ion-row>Life: {{u.Stats.Life}}</ion-row>
+      <ion-row>Mana: {{u.Stats.Mana}}</ion-row>
+    </ion-col>
+    <ion-col>
+      <ion-row>Strength: {{u.Stats.Strength}}</ion-row>
+      <ion-row>Defense: {{u.Stats.Defense}}</ion-row>
+      <ion-row>Dexterity: {{u.Stats.Dexterity}}</ion-row>
+    </ion-col>
+
+    <ion-col class="ion-float-right ion-margin-vertical">
+      <a routerLink="/login" class="ion-float-right ">Logout</a>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</div>
+
+<ng-template #noLogin>
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col class="ion-float-right">
+        <ion-row class="ion-float-right">Logout</ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ng-template>
